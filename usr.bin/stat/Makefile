@@ -16,4 +16,6 @@ COPTS.stat.c+=	-Wno-error=implicit-fallthrough
 
 COPTS.stat.c += -Wno-format-nonliteral
 
+LDADD=	-lutil
+
 .include <bsd.prog.mk>
