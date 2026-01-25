@@ -831,7 +831,7 @@ progress(const char *file, uintmax_t done, uintmax_t total)
 	int n;
 
 	if (ttyfd == -2)
-		ttyfd = open(_PATH_TTY, O_RDWR | O_CLOEXEC);
+		ttyfd = open(_PATH_TTY, O_RDWR | O_CLOEXEC | O_CLOFORK);
 
 	if (ttyfd == -1)
 		return;
