@@ -1740,7 +1740,7 @@ check_siginfo(void)
 		goto out;
 
 	if (ttyfd == -2)
-		ttyfd = open(_PATH_TTY, O_RDWR | O_CLOEXEC);
+		ttyfd = open(_PATH_TTY, O_RDWR | O_CLOEXEC | O_CLOFORK);
 
 	if (ttyfd == -1)
 		goto out;
