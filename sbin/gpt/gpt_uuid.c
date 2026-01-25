@@ -281,7 +281,7 @@ gpt_uuid_random(gpt_t gpt, struct dce_uuid *u, size_t n)
 	ssize_t nread;
 
 	/* Randomly generate the content.  */
-	fd = open("/dev/urandom", O_RDONLY | O_CLOEXEC);
+	fd = open("/dev/urandom", O_RDONLY | O_CLOEXEC | O_CLOFORK);
 	if (fd == -1) {
 		gpt_warn(gpt, "Can't open `/dev/urandom'");
 		return -1;
